@@ -99,6 +99,9 @@ class MyFirstPageState extends State<MyFirstPage> {
                       timesClicked == 0 ? 'Click Me' : 'Clicked $timesClicked'),
                 ),
               ),
+              SizedBox(
+                width: 10,
+              ),
               Visibility(
                 visible: enabled,
                 maintainState: true,
@@ -134,6 +137,7 @@ class MyFirstPageState extends State<MyFirstPage> {
                     validator: nameValidator,
                     onSaved: nameSaved,
                     decoration: const InputDecoration(
+                      hintText: 'first name',
                       icon: Icon(Icons.hourglass_top),
                       helperText: 'min 1, max 20',
                       suffixIcon: Icon(Icons.check_circle),
@@ -141,9 +145,12 @@ class MyFirstPageState extends State<MyFirstPage> {
                   ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: ElevatedButton(
-                      onPressed: submitPressed,
-                      child: Text('Submit'),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: ElevatedButton(
+                        onPressed: submitPressed,
+                        child: Text('Submit'),
+                      ),
                     ),
                   ),
                 ],
